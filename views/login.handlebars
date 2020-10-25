@@ -1,0 +1,26 @@
+<div id="body">
+    <div class="nav">
+        <a href="/articles" class="btn btn-sm btn-info">Hikayeler Dön</a>
+        <a href="/" class="btn btn-sm btn-info ml-3">Anasayfa</a>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <form class="form" action="/articles/login" method="POST">
+                <div class="form-group">
+                    <label for="username">Kullanıcı Adı:</label>
+                    <input type="text" name="username" class="form-control" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Şifre:</label>
+                    <input type="password" name="password" class="form-control" id="password" required>
+                </div>
+                <button class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+
+
+</div>

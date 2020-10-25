@@ -1,0 +1,42 @@
+<div id="body">
+    <div class="nav mb-2 text-center">
+        <a href="/articles" class="btn btn-sm btn-info">Hikayelere Dön</a>
+        <a href="/" class="btn btn-sm btn-info ml-2">Anasayfa</a>
+    </div>
+    <div id="main">
+        <div id="story">
+            <h2>{{story.name}}</h2>
+            <p>{{{story.story}}}</p>
+        </div>
+        <div id="active">
+            <form method="POST" action="/articles/{{story._id}}?_method=PUT">
+                <button class="btn btn-danger btn-sm mr-3" type="submit">Beğen</button>
+                <input class="btn-success" type="text" name="likes" id="likes" value="{{story.likes}}" readonly>
+            </form>
+            <div class="text-center mt-4">
+                <h3>Yorumlar:</h3>
+                <ol>
+                    {{#each story.comments}}
+                    <li><em>{{this}}</em></li>
+                    {{/each}}
+                </ol>
+                <form method="POST" action="/articles/{{story._id}}">
+                    <textarea name="comment" id="comment" cols="30" rows="5" maxlength="300" minlength="3"
+                        placeholder="{{text}}" required></textarea><br>
+                    <button class="btn btn-warning btn-sm" type="submit">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        {{#unless loggedin}}
+        <a href="/articles/login" class="btn btn-info btn-sm mt-3 ml-3"> Giriş</a>
+        {{/unless}}
+        {{#if loggedin}}
+        <a href="/articles/new" class="btn btn-sm btn-success">Yeni Ekle</a>
+        <form method="POST" action="/articles/logout">
+            <button class="btn btn-info btn-sm" type="submit">Çıkış</button>
+        </form>
+        {{/if}}
+    </div>
+</div>

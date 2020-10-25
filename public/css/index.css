@@ -1,0 +1,128 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px;
+  padding: 0px;
+}
+#mynav {
+  z-index: 2;
+  background-image: linear-gradient(to right, #ffc145, #28a745);
+  position: fixed;
+  top: 0vh;
+  left: 0px;
+  width: 70vw;
+  opacity: 0.2;
+  transform: scale(0.2, 0.2);
+  height: 4vh;
+}
+@keyframes heard-beat {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#articles-btn {
+  position: absolute;
+  right: 15vw;
+  top: 4vh;
+  border-radius: 50%;
+  animation: heard-beat 1.2s ease-out 3s infinite;
+}
+#portfolio-btn {
+  position: absolute;
+  left: 10vw;
+  top: 4vh;
+  border-radius: 50%;
+  animation: heard-beat 1.2s ease-out 3s infinite;
+}
+
+#left {
+  background-image: url("../images/steppe.jpg");
+  background-size: cover !important;
+  position: relative;
+  padding: 0px;
+  width: 70vw;
+  top: 0px;
+  left: 0px;
+}
+
+#space {
+  position: relative;
+  padding: 6px 20px 6px 10px;
+  left: 0px;
+  top: -45vh;
+  color: white;
+  background-color: rgb(145, 128, 128);
+  box-shadow: -10px 10px 5px rgb(160, 133, 83);
+}
+#close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: black;
+  cursor: pointer;
+}
+#close-btn:hover {
+  color: red;
+}
+.img {
+  opacity: unset;
+}
+#right {
+  font-family: "Comic Sans MS";
+  text-align: center;
+  position: relative;
+  padding: 10px;
+  padding-left: 20px;
+  width: 30vw;
+  top: 0px;
+  right: -30vw;
+  background-image: linear-gradient(to top left, linen 80%, rgb(143, 87, 24));
+  border-radius: 15% 0 0 0;
+  z-index: 3;
+}
+
+@media (max-width: 760px) {
+  #left {
+    position: unset;
+    width: 100vw;
+    height: 50vh;
+  }
+  #right {
+    width: 100vw;
+    padding: 15px;
+    height: 40rem;
+  }
+  body {
+    overflow-y: scroll !important;
+  }
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  #mynav {
+    width: 100vw;
+  }
+  #space {
+    display: none;
+  }
+  #articles-btn {
+    position: absolute;
+    right: 10vw;
+  }
+}

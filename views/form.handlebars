@@ -1,0 +1,36 @@
+<div class="mt-0" style="background-color: rgb(168, 144, 120); width:70vw; margin-left:15vw">
+    <nav class="nav mt-3 ml-3">
+        <form method="POST" action="/articles/logout">
+            <button class="btn btn-dark btn-sm" type="submit">Çıkış</button>
+        </form>
+        <a href="/" class="btn btn-sm btn-info">Anasayfa</a>
+        <a href="/articles" class="btn btn-sm btn-info">Hikayeler</a>
+    </nav>
+    {{#if newComment}}
+
+    <h5 class="ml-3">!!There is a new comment: <a href="/articles/{{idx}}">See Comment</a></h5>
+
+    {{/if}}
+    <div class="form text-center">
+        <form action="/articles/new" method="POST">
+            <div class="form-group">
+                <label for="name">Name of Story:</label>
+                <input type="text" name="name" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Brief Description:</label>
+                <input type="text" name="description" class="form-control" id="description">
+            </div>
+            <div class="form-group">
+                <label for="story">Story:</label>
+                <textarea name="story" class="form-control" id="story" cols="30" rows="10"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>

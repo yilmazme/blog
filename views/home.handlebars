@@ -1,0 +1,28 @@
+<div id="body">
+    <div class="nav mb-2">
+        <a href="/" class="btn btn-sm btn-info">Anasayfa</a>
+    </div>
+    <div id="main">
+        {{#each story}}
+        <div id="each">
+            <h3>{{this.name}}</h3>
+            <h5 class="text-muted">{{this.date}}</h5>
+            <p>{{this.description}}...</p>
+            <span><a class="btn btn-success btn-sm" href="/articles/{{this._id}}">Oku</a>
+                <i class="fas fa-heart ">{{this.likes}}</i>
+            </span>
+        </div>
+        {{/each}}
+    </div>
+    <div class="footer">
+        {{#unless loggedin}}
+        <a href="/articles/login" class="btn btn-info btn-sm"> Giriş</a>
+        {{/unless}}
+        {{#if loggedin}}
+        <a href="/articles/new" class="btn btn-sm btn-success">Yeni Ekle</a>
+        <form method="POST" action="/articles/logout">
+            <button class="btn btn-info btn-sm" type="submit">Çıkış</button>
+        </form>
+        {{/if}}
+    </div>
+</div>
