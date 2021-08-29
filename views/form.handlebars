@@ -5,12 +5,14 @@
         </form>
         <a href="/" class="btn btn-sm btn-info">Anasayfa</a>
         <a href="/articles" class="btn btn-sm btn-info">Hikayeler</a>
+        <a href="/articles/comments" class="btn btn-sm btn-info">See all Comments</a>
     </nav>
     {{#if newComment}}
 
-    <h5 class="ml-3">!!There is a new comment: <a href="/articles/{{idx}}">See Comment</a></h5>
+    <h5 class="ml-3">!!There is a new comment: </h5>
 
     {{/if}}
+
     <div class="form text-center">
         <form action="/articles/new" method="POST">
             <div class="form-group">

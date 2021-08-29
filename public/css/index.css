@@ -24,28 +24,18 @@ body {
   transform: scale(0.2, 0.2);
   height: 4vh;
 }
-@keyframes heard-beat {
-  from {
-    opacity: 0.8;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 #articles-btn {
   position: absolute;
   right: 15vw;
   top: 4vh;
   border-radius: 50%;
-  animation: heard-beat 1.2s ease-out 3s infinite;
 }
 #portfolio-btn {
   position: absolute;
   left: 10vw;
   top: 4vh;
   border-radius: 50%;
-  animation: heard-beat 1.2s ease-out 3s infinite;
 }
 
 #left {
