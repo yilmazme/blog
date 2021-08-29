@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 require('dotenv').config();
-const path = require("path");
 
 
 const Story = require("../Story");
