@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 require('dotenv').config();
-
+const path = require("path");
 
 
 const Story = require("../Story");
@@ -22,7 +22,7 @@ router.get("/articles", (req,res)=>{
     .lean()
     .then((data)=>{
       
-        res.render("home",{story:data, loggedin:loggedin, style:"css/home.css"})
+        res.render("home",{story:data, loggedin:loggedin, style:"home.css"})
     })
     
 })
@@ -35,7 +35,7 @@ router.post("/articles/logout",(req,res)=>{
 
 router.get("/articles/login", (req,res)=>{
     if(!loggedin){
-        res.render("login", {style:"../css/login.css"})
+        res.render("login", {style:"../login.css"})
     }
     else{
         res.redirect("back")
@@ -104,7 +104,7 @@ router.get("/articles/:id",(req,res)=>{
        res.render("story",{
             story:data,
             loggedin:loggedin,
-            style:"../css/story.css",
+            style:"../story.css",
             text:"Yorum yap"
        })
    })
