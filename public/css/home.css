@@ -1,0 +1,48 @@
+#body {
+  margin: 0px;
+  padding: 10px;
+  background-color: rgb(225, 93, 243);
+}
+
+#main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 6px;
+}
+#each {
+  position: relative;
+  padding: 10px;
+  border: 2px solid gray;
+  background-image: linear-gradient(
+    to top right,
+    rgb(245, 191, 91),
+    rgb(107, 228, 157)
+  );
+  box-shadow: 5px -5px 5px rgb(160, 133, 83);
+  border-radius: 5%;
+}
+#each:hover {
+  border: 2px solid tomato;
+  opacity: 0.8;
+}
+
+.fas {
+  color: rgb(202, 22, 22);
+  position: relative;
+  left: 70%;
+}
+.footer{
+  opacity: 0;
+}
+.footer:hover{
+  opacity: 1;
+}
+.btn{
+  margin-right: 1rem;
+}
+@media (max-width: 760px) {
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
