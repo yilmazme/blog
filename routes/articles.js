@@ -24,7 +24,7 @@ router.get("/articles", (req, res) => {
       res.render("home", {
         story: data,
         loggedin: loggedin,
-        style: "home.css",
+        style: "./css/home.css",
       });
     });
 });
@@ -36,7 +36,7 @@ router.post("/articles/logout", (req, res) => {
 
 router.get("/articles/login", (req, res) => {
   if (!loggedin) {
-    res.render("login", { style: "login.css" });
+    res.render("login", { style: "../css/login.css" });
   } else {
     res.redirect("back");
     return;
@@ -110,7 +110,7 @@ router.get("/articles/:id", (req, res) => {
       res.render("story", {
         story: data,
         loggedin: loggedin,
-        style: "story.css",
+        style: "../css/story.css",
         text: "Yorum yap",
       });
     })
