@@ -29,8 +29,7 @@ mongoose.connection.on("connected", () => {
 });
 app.use("/", router);
 app.get("*", (req, res) => {
-  res.send(req.path);
-  //res.send("<h2>There is no such path</h2>");
+  res.send("<h2>There is no such path</h2>");
 });
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
