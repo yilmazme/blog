@@ -8,15 +8,15 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.use(methodOver("_method"));
 
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
